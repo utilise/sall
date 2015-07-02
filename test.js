@@ -1,10 +1,10 @@
 var expect = require('chai').expect
-  , d3 = global.d3 = require('d3')
   , client = require('client')
   , shim = !client && polyfill()
+  , d3 = global.d3 = require('d3')
   , sall = require('./')
 
-describe('sel', function() {
+describe('sall', function() {
 
   before(function(){
     /* istanbul ignore next */
@@ -27,9 +27,14 @@ describe('sel', function() {
     expect(sall(d3.select(node))('li').size()).to.be.equal(3)
   })
 
+  it('should d3 selectAll node from no scope', function() {
+    expect(sall()('li').size()).to.be.equal(3)
+  })
+
 })
 
 function polyfill(){
   window = require("jsdom").jsdom('<div>').defaultView
   global.document = window.document
+  global.querySelectorAll = document.querySelectorAll
 }
