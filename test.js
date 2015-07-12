@@ -12,7 +12,7 @@ describe('sall', function() {
       ? document.body.firstElementChild
       : document.body.appendChild(document.createElement('div'))
 
-    node.innerHTML = '<li></li><li><li></li></li>'
+    node.innerHTML = '<li class="sall-li"></li><li class="sall-li"><li class="sall-li"></li></li>'
   })
 
   after(function(){
@@ -20,15 +20,15 @@ describe('sall', function() {
   })
 
   it('should d3 selectAll node', function() {
-    expect(sall(node)('li').size()).to.be.equal(3)
+    expect(sall(node)('.sall-li').size()).to.be.equal(3)
   })
 
   it('should d3 selectAll from existing selection', function() {
-    expect(sall(d3.select(node))('li').size()).to.be.equal(3)
+    expect(sall(d3.select(node))('.sall-li').size()).to.be.equal(3)
   })
 
   it('should d3 selectAll node from no scope', function() {
-    expect(sall()('li').size()).to.be.equal(3)
+    expect(sall()('.sall-li').size()).to.be.equal(3)
   })
 
 })
