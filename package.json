@@ -1,5 +1,5 @@
 {
-  "name": "sall",
+  "name": "utilise.sall",
   "version": "0.0.0",
   "main": "index.js",
   "scripts": {
@@ -10,7 +10,7 @@
   "license": "pemrouz.mit-license.org",
   "devDependencies": {
     "chai": "^2.3.0",
-    "client": "git+https://github.com/utilise/client.git",
+    "utilise.client": "*",
     "coveralls": "^2.11.2",
     "d3": "^3.5.5",
     "istanbul": "^0.3.13",
@@ -19,6 +19,6 @@
     "mocha-lcov-reporter": "0.0.2"
   },
   "dependencies": {
-    "sel": "git+https://github.com/utilise/sel.git"
+    "utilise.sel": "*"
   }
 }

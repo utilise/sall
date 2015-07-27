@@ -1,4 +1,4 @@
-var sel = require('sel')
+var sel = require('utilise.sel')
 
 module.exports = function sall(scope){
   var parent = !scope ? d3

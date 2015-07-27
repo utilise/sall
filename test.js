@@ -1,5 +1,5 @@
 var expect = require('chai').expect
-  , client = require('client')
+  , client = require('utilise.client')
   , shim = !client && polyfill()
   , d3 = global.d3 = require('d3')
   , sall = require('./')
