@@ -31,6 +31,10 @@ describe('sall', function() {
     expect(sall()('.sall-li').size()).to.be.equal(3)
   })
 
+  it('should select raw node', function() {
+    expect(sall()(node).size()).to.be.equal(1)
+  })
+
   it('should not double select', function() {
     expect(sall()(d3.select(node).selectAll('li')).size()).to.be.equal(3)
   })
