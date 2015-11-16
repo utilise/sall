@@ -31,6 +31,10 @@ describe('sall', function() {
     expect(sall()('.sall-li').size()).to.be.equal(3)
   })
 
+  it('should not double select', function() {
+    expect(sall()(d3.select(node).selectAll('li')).size()).to.be.equal(3)
+  })
+
 })
 
 function polyfill(){
